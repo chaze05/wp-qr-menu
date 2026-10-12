@@ -1,0 +1,50 @@
+/* WP QR Menu — table QR code admin screen */
+.qrm-lead { max-width: 640px; color: #646970; }
+
+.qrm-tables-form { margin: 18px 0 6px; max-width: 640px; }
+.qrm-tables-form textarea { margin-top: 6px; }
+
+.qrm-empty-state {
+	margin-top: 24px;
+	padding: 40px;
+	border: 1px dashed #c3c4c7;
+	border-radius: 12px;
+	text-align: center;
+	color: #646970;
+	max-width: 640px;
+}
+
+.qrm-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 16px;
+	margin-top: 20px;
+	max-width: 1100px;
+}
+.qrm-card {
+	padding: 18px 16px;
+	border: 1px solid #dcdcde;
+	border-radius: 14px;
+	background: #fff;
+	text-align: center;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.qrm-card-code { min-height: 160px; display: flex; align-items: center; justify-content: center; }
+.qrm-card-code img { width: 160px; height: 160px; image-rendering: pixelated; }
+.qrm-card-meta { margin-top: 10px; }
+.qrm-card-meta strong { display: block; font-size: 15px; }
+.qrm-card-meta span { display: block; margin-top: 2px; font-size: 12px; color: #646970; }
+.qrm-card-hint { font-style: italic; }
+.qrm-download { margin-top: 12px !important; }
+
+@media print {
+	#adminmenumain, #wpadminbar, #wpfooter, #screen-meta, #screen-meta-links,
+	.qrm-tables-form, .qrm-lead, .qrm-download, .qrm-wrap > h1, .notice, .updated, .error {
+		display: none !important;
+	}
+	html.wp-toolbar { padding-top: 0 !important; }
+	#wpcontent { margin-left: 0 !important; padding-left: 0 !important; }
+	.wrap { margin: 8px !important; }
+	.qrm-cards { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: none; }
+	.qrm-card { border: 1px dashed #999; page-break-inside: avoid; }
+}
